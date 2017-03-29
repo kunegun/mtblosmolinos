@@ -1,0 +1,66 @@
+/* My Calendar */
+.mc-main
+	th
+		background rgba(naranja 0.8)
+	tr
+		td
+			padding 6px!important
+			.mc-date
+				background none!important
+			&.nextmonth
+				opacity 0
+			&.current-day
+				.mc-date
+					background none!important
+					color naranja!important
+			&.has-events
+				.mc-date
+					color green
+					bottom 0
+	caption
+		background rgba(naranja, 0.8)
+		text-align center
+	.mc_bottomnav
+		background none
+		margin-top -31px
+		padding 0 5px
+		.my-calendar-nav
+			width 100%
+			ul
+				width 100%
+				.my-calendar-prev
+					float left
+				.my-calendar-next
+					float right
+	.details
+		.sharing
+			a
+				color naranja
+	.calendar-event
+		.details
+			max-width 350px
+			left auto
+			margin-left -50px
+	.single-event
+		img
+			background-color #ffffff
+			box-shadow 0 3px 6px rgba(0,0,0,.25)
+			display inline-block
+			margin-right 20px
+			max-width 30%
+			padding 5px
+			width auto
+		.location
+			display none
+		.longdesc
+			display inline-block
+			width 60%
+			vertical-align top
+		.event-title
+			background none!important
+			color naranja!important
+			font-size 24px
+			img
+				background none
+				display none
+
