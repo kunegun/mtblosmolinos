@@ -9,6 +9,7 @@ import gcmq from 'gulp-group-css-media-queries';
 import eslint from 'gulp-eslint';
 import imagemin from 'gulp-imagemin';
 import koutoSwiss from 'kouto-swiss';
+import newer from 'gulp-newer';
 import plumber from 'gulp-plumber';
 import prefixer from 'autoprefixer-stylus';
 import sourcemaps from 'gulp-sourcemaps';
@@ -43,15 +44,16 @@ gulp.task('css', () => {
         .pipe(browserSync.stream());
 });
 // Optimize images
-gulp.task('images', () => {
+// Minify any new images
+gulp.task('images', function() {
+  // Add the newer pipe to pass through newer images only
     gulp.src(devPaths.img)
-        .pipe(plumber())
-        .pipe(imagemin({
-            optimizationLevel: 3,
-            progressive: true,
-            interlaced: true
-        }))
-        .pipe(gulp.dest(deployPaths.img));
+      .pipe(newer(deployPaths.img))
+      .pipe(imagemin())
+      .pipe(gulp.dest(deployPaths.img))
+      .on('end', function() {
+        browserSync.reload();
+      })
 });
 // Scripts
 gulp.task('lint', () =>
@@ -70,7 +72,8 @@ gulp.task( 'server', function() {
   browserSync.init({
     // Cambiar el proxy por la ruta que esté escuchando nuestra instalación
     // local de Wordpress
-    proxy: 'http://localhost:8888/wordpress'
+    proxy: 'http://localhost:8888/wordpress',
+    logPrefix: 'MTB',
   });
 
   // Recargamos el navegador si cualquier archivo .php tiene cambios

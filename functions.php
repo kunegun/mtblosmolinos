@@ -29,6 +29,7 @@ if (function_exists('add_theme_support'))
     add_theme_support('post-thumbnails');
     add_image_size('slider', 2000, 700, true);
     add_image_size('mediano', 350,250,true);
+    add_image_size('homeRutaDestacada', 425, 425, true);
     add_image_size('rutaDestacada', 705, 391, true);
     add_image_size('rutaPrincipal', 751, 422, true);
     add_image_size('blogPrincipal', 1100, 404, true);
@@ -270,7 +271,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
     $output = get_the_excerpt();
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
-    $output = '<p>' . $output . '</p>';
+    //$output = '<p>' . $output . '</p>';
     echo $output;
 }
 
@@ -535,21 +536,23 @@ function create_post_type_destacados()
     ));
 }
 
-function themeslug_theme_customizer( $wp_customize ) {
-    $wp_customize->add_section( 'themeslug_logo_section' , array(
-        'title' => __( 'Logo', 'themeslug' ),
-        'priority' => 30,
-        'description' => 'Upload a logo to replace the default site name and description in the header',
-        ) );
-    $wp_customize->add_setting( 'themeslug_logo' );
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-        'label' => __( 'Logo', 'themeslug' ),
-        'section' => 'themeslug_logo_section',
-        'settings' => 'themeslug_logo',
-        ) ) );
-}
 
-add_action('customize_register', 'themeslug_theme_customizer');
+///Function to add a Logo in the Appareance Menu
+// function themeslug_theme_customizer( $wp_customize ) {
+//     $wp_customize->add_section( 'themeslug_logo_section' , array(
+//         'title' => __( 'Logo', 'themeslug' ),
+//         'priority' => 30,
+//         'description' => 'Upload a logo to replace the default site name and description in the header',
+//         ) );
+//     $wp_customize->add_setting( 'themeslug_logo' );
+//     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
+//         'label' => __( 'Logo', 'themeslug' ),
+//         'section' => 'themeslug_logo_section',
+//         'settings' => 'themeslug_logo',
+//         ) ) );
+// }
+
+//add_action('customize_register', 'themeslug_theme_customizer');
 
 /*------------------------------------*\
 	ShortCode Functions

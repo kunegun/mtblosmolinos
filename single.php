@@ -10,12 +10,12 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<!-- post title -->
-			<h1><span><?php the_title(); ?></span></h1>
+			<h1 class="single__title"><?php the_title(); ?></h1>
 			<!-- /post title -->
 
 			<!-- post thumbnail -->
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<div class="foto">
+				<div class="single__foto">
 					<?php the_post_thumbnail('blogPrincipal'); // Fullsize image for the single post ?>
 				</div>
 			<?php endif; ?>
@@ -23,18 +23,17 @@
 
 
 
-			<div class="grid1-3 info-single-post">
+			<div class="grid1-3 noticias__info__post">
 				<!-- post details -->
-				<span class="date">Escrito el: <?php the_time('F j, Y'); ?></span><br>
-				<span class="author"><?php _e( 'Publicado por', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span><br>
-				<span><?php _e( 'Categoría: ', 'html5blank' ); the_category(', '); // Separated by commas ?></span>
-				<!-- <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span> -->
+				<p class="item__info__line">Escrito el: <span><?php the_date('d/m/Y'); ?></span></p>
+				<p class="item__info__line">Publicado por: <span><?php the_author_posts_link(); ?></span></p>
+				<p class="item__info__line">Categoría: <span><?php the_category(', '); ?></span></p>
+
 				<!-- /post details -->
-				<ul class="social">
-				  <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" onClick="ga('send', 'event', 'social', 'shareFB', '<?php the_permalink(); ?>');" target="_blank"><img src="<?php bloginfo('template_url') ?>/img/social/fb.svg" width="23" height="23" alt="Facebook" title="Facebook" /></a></li>
-				  <!--li><a href="https://twitter.com/home?status=<?php the_title();?> - <?php the_permalink();?>" onClick="ga('send', 'event', 'social', 'shareTW', '<?php the_permalink(); ?>');" target="_blank"><img src="<?php bloginfo('template_url') ?>/_img/_social/tw.svg" width="23" height="23" alt="Twitter" title="Twitter" /></a></li-->
-				  <li><a href="https://twitter.com/intent/tweet?text=<?php echo rawurlencode(the_title('','',false));?> - <?php the_permalink();?>" onClick="ga('send', 'event', 'social', 'shareTW', '<?php the_permalink(); ?>');" target="_blank"><img src="<?php bloginfo('template_url') ?>/img/social/tw.svg" width="23" height="23" alt="Twitter" title="Twitter" /></a></li>
-				  <li class="whatsapp"><a target="_blank" href="whatsapp://send?text=<?php echo rawurlencode(the_title('','',false));?> - <?php the_permalink();?>"><img src="<?php bloginfo('template_url') ?>/img/social/wh.svg" width="23" height="23" alt="Whatsapp" title="Whatsapp" /></a></li>
+				<ul class="social__links share">
+				  <li class="link__share__facebook"><a class="icon-share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" onClick="ga('send', 'event', 'social', 'shareFB', '<?php the_permalink(); ?>');" target="_blank"></a></li>
+				  <li class="link__share__twitter"><a class="icon-share-twitter" href="https://twitter.com/intent/tweet?text=<?php echo rawurlencode(the_title('','',false));?> - <?php the_permalink();?>" onClick="ga('send', 'event', 'social', 'shareTW', '<?php the_permalink(); ?>');" target="_blank"></a></li>
+				  <li class="link__share__whatsapp"><a class="icon-share-whatsapp" target="_blank" href="whatsapp://send?text=<?php echo rawurlencode(the_title('','',false));?> - <?php the_permalink();?>"></a></li>
 				</ul>
 			</div>
 			<div class="grid2-3">

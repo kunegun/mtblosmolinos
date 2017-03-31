@@ -24,7 +24,7 @@
 		});
 
 		// DOM ready, take it away
-		$('ul.slider').bxSlider({
+		$('.home__slider__list').bxSlider({
 			mode: 'fade',
 			pager: false,
 		});
