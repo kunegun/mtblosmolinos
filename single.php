@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
-	<!-- section -->
-	<section class="clear">
+	<main role="main" class="single__main">
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -62,8 +60,6 @@
 
 	<?php endif; ?>
 
-	</section>
-	<!-- /section -->
 	</main>
 
 <?php //get_sidebar(); ?>

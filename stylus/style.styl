@@ -44,6 +44,10 @@ a
 input:focus
 	outline 0
 	border 1px solid #04A4CC
+.animsition
+	display flex
+	flex-direction column
+	min-height 100vh
 .animsition-overlay-slide
 	z-index 52
 	background-color color-primario
@@ -86,10 +90,14 @@ input:focus
 	width 95%
 	margin 0 auto
 	position relative
+	flex 1
 /* Contenido */
 .main__container
 	margin-top -100px
 	width 100%
+.main__generico
+	position relative
+	z-index 200
 /*------------------------------------ HEADER ------------------------------- */
 .header
 	position relative
@@ -404,6 +412,46 @@ input:focus
 				background-color color-primario
 				color white
 
+/*----------------------------- PAGE RUTAS --------------------------------*/
+.rutas__container
+	display flex
+	flex-wrap wrap
+.page__rutas__item
+	width 50%
+	display flex
+	.imagen-destacada
+		flex 1 1 50%
+	.rutas__item__info
+		flex 1 1 50%
+		margin 0
+		height auto
+	.rutas__item__title
+		height 80%
+	&:nth-child(odd)
+		.imagen-destacada
+			order 2
+	&:nth-child(2)
+		position relative
+		display flex
+		flex-direction column
+		justify-content center
+		align-self flex-end
+		.rutas__item__info
+			background none
+			position absolute
+			display flex
+			justify-content center
+			width 100%
+		.rutas__item__title
+			color white
+			height 100px
+			&:before,
+			&:after
+				background white
+				left 50%
+				margin-left -30px
+
+
 /*------------------------------------*\
     PAGES
 \*------------------------------------*/
@@ -434,7 +482,7 @@ input:focus
 	&:after
 		content ''
 		height 5px
-		width 30px
+		width 60px
 		background black
 		position absolute
 		top -10px

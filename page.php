@@ -1,20 +1,16 @@
 <?php get_header(); ?>
 
 	<main role="main" class="main__generico">
-		<!-- section -->
-				<section class="clear">
 
-					<h1><span><?php the_title(); ?></span></h1>
+		<h1 class="page__title"><?php the_title(); ?></h1>
 
-					<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-						<!-- article -->
-						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<!-- article -->
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<?php the_content(); ?>
+				<?php the_content(); ?>
 
-
-					<br class="clear">
 
 				<!-- <?php edit_post_link(); ?> -->
 
@@ -35,8 +31,6 @@
 
 		<?php endif; ?>
 
-		</section>
-		<!-- /section -->
 	</main>
 
 <?php //get_sidebar(); ?>

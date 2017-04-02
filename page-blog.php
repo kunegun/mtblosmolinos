@@ -5,8 +5,6 @@
  get_header(); ?>
 
 	<main role="main" class="main__noticias">
-		<!-- section -->
-		<section class="clear">
 
 			<h1 class="page__title"><?php the_title(); ?></h1>
 
@@ -78,11 +76,6 @@
 			<?php wp_reset_postdata(); ?>
 
 
-
-
-
-
-			<br class="clear"></br>
 			<?php edit_post_link(); ?>
 
 		<?php endwhile; ?>
@@ -99,8 +92,6 @@
 
 		<?php endif; ?>
 
-		</section>
-		<!-- /section -->
 	</main>
 
 <?php //get_sidebar(); ?>
