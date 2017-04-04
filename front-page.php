@@ -1,4 +1,4 @@
-classphp get_header(); ?>
+<?php get_header(); ?>
 
 	</div><!-- cierre wrapper -->
 	<main role="main" class="main__container">

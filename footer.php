@@ -12,7 +12,7 @@
 					<p class="footer__copyright">
 						&copy; <?php echo date('Y'); ?> Derechos reservados <?php bloginfo('name'); ?>
 					</p>
-					<p class="footer__author">Made with love by <a class="link" href="https://www.twitter.com/kune_" onclick="ga('send', 'event', 'rrss', 'author footer');" target="_blank">@kune</a></p>
+					<p class="footer__author">Made with love by <a class="link" href="https://www.twitter.com/kune_" onclick="ga('send', 'event', 'rrss', 'author footer');" target="_blank">@kune</a> & <a class="link" href="https://www.twitter.com/Nete4" onclick="ga('send', 'event', 'rrss', 'adri footer');" target="_blank">@adri</a> </p>
 				</div>
 			</div>
 		</footer>

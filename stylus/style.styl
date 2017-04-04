@@ -148,6 +148,32 @@ input:focus
 						letter-spacing 2px
 						text-transform uppercase
 
+//////// SLICK NAV ////////////
+.slicknav_btn
+	&.slicknav_open
+		background-color color-primario
+.slicknav_menu
+	background none
+	position absolute
+	z-index 201
+	right 0
+	padding 15px
+	+for_breakpoint(desktop)
+		display none
+	&.open-slicknav
+		background rgba(0, 0, 0, .75)
+		width 100vw
+	.slicknav_btn,
+	.slicknav_nav
+		margin-bottom 10px
+	.slicknav_nav
+		text-align center
+		a
+			font-size 1.2rem
+			font-weight bold
+			&:hover
+				background-color color-primario
+				color white
 ///// fin header
 /*----------------------------- FOOTER ---------------------------------------*/
 .footer
@@ -166,6 +192,7 @@ input:focus
 .footer__legal
 	align-self center
 	flex 1 0 auto
+	font-size 12px
 	position relative
 	z-index 1
 	+for_breakpoint(tablet desktop)
@@ -198,6 +225,9 @@ input:focus
 		&.link__mail
 			a
 				font-size 34px
+				&:before
+					position absolute
+					top 9px
 		&.link__share__facebook
 			a
 				color color-facebook
@@ -301,7 +331,7 @@ input:focus
 		.destacados__info__text
 			letter-spacing initial
 //////// fin home destacados
-////////////////////////// HOME NOTICIAS ////////////////////////////////////////////
+/*----------------------------- HOME NOTICIAS --------------------------------*/
 .noticias__item
 	margin 20px 0
 	+for_breakpoint(tablet desktop)
@@ -315,11 +345,45 @@ input:focus
 .noticias__item__text
 	line-height 1.6
 .noticias__item__foto
-	max-width 250px
+	+for_breakpoint(tablet desktop)
+		max-width 250px
 	&.top
 		max-width 900px
 		margin 0 auto 30px
 ////// fin home noticias
+/*------------------------------- HOME RUTAS ---------------------------------*/
+.rutas__item
+	padding 20px
+.rutas__item__info
+	background-color color-secundario
+	height 170px
+	padding 20px
+	width 80%
+	margin -80px auto 0
+	z-index 1
+	position relative
+.rutas__item__title
+	align-items center
+	display flex
+	font-size 22px
+	height 85px
+	letter-spacing 4px
+	position relative
+	text-align left
+	text-transform uppercase
+	&:before,
+	&:after
+		content ''
+		height 5px
+		width 60px
+		background black
+		position absolute
+		top -10px
+	&:after
+		bottom -10px
+		top auto
+		left 0
+//////fin home rutas
 /*------------------------------ SIDEBAR -------------------------------------*/
 .sidebar
 	margin-top 35px
@@ -342,6 +406,8 @@ input:focus
 	margin 10px 0 50px
 	+for_breakpoint(tablet desktop)
 		margin 80px 0 120px
+		&.page__title__rutas
+			margin-bottom 84px
 .page__img__destacada
 	background-size cover
 	background-position center
@@ -387,70 +453,93 @@ input:focus
 .single__foto
 	max-width 900px
 	margin 0 auto
-//////// SLICK NAV ////////////
-.slicknav_btn
-	&.slicknav_open
-		background-color color-primario
-.slicknav_menu
-	background none
-	position absolute
-	z-index 101
-	right 0
-	padding 15px
-	+for_breakpoint(desktop)
-		display none
-	&.open-slicknav
-		background rgba(0, 0, 0, .75)
-	.slicknav_btn,
-	.slicknav_nav
-		margin-bottom 10px
-	.slicknav_nav
-		a
-			font-size 1.2rem
-			font-weight bold
-			&:hover
-				background-color color-primario
-				color white
-
 /*----------------------------- PAGE RUTAS --------------------------------*/
-.rutas__container
-	display flex
-	flex-wrap wrap
+
 .page__rutas__item
-	width 50%
 	display flex
+	min-height 200px
+	opacity 0
+	transform scale(.5)
+	flex-direction column
+	margin 10px 0
+	+for_breakpoint(tablet desktop)
+		width 50%
+		flex-direction row
+		margin 0
+	for items in 1..10
+		&:nth-child({items})
+			animation pop .5s .2s*items 1 forwards
+
 	.imagen-destacada
+		position relative
 		flex 1 1 50%
+		overflow hidden
+		min-height 150px
+		img
+			-webkit-transform translateY(-50%) translateX(-50%)
+			height auto
+			left 50%
+			max-width initial
+			min-height 100%
+			min-width 100%
+			position absolute
+			top 50%
+			width auto
+			opacity .8
 	.rutas__item__info
 		flex 1 1 50%
 		margin 0
 		height auto
-	.rutas__item__title
-		height 80%
-	&:nth-child(odd)
+		width 100%
+	// .rutas__item__title
+	// 	height 80%
+	&.item1
+		+for_breakpoint(tablet desktop)
+			float right
+			itemRutaBig()
+	&.item2
+		+for_breakpoint(tablet desktop)
+			float left
+			flechaIzq()
+	&.item3
+		+for_breakpoint(tablet desktop)
+			float left
+			flechaDer()
+			.imagen-destacada
+				order 2
+	&.item4
+		+for_breakpoint(tablet desktop)
+			float left
+			itemRutaBig()
+	&.item5
+		+for_breakpoint(tablet desktop)
+			float right
+			flechaIzq()
+	&.item6
+		+for_breakpoint(tablet desktop)
+			float right
+			flechaDer()
+			.imagen-destacada
+				order 2
+	&:hover
 		.imagen-destacada
-			order 2
-	&:nth-child(2)
-		position relative
-		display flex
-		flex-direction column
-		justify-content center
-		align-self flex-end
-		.rutas__item__info
-			background none
-			position absolute
-			display flex
-			justify-content center
-			width 100%
-		.rutas__item__title
-			color white
-			height 100px
-			&:before,
-			&:after
-				background white
-				left 50%
-				margin-left -30px
+			img
+				opacity 1
 
+.single__ruta__info
+	background-color color-secundario
+	padding 20px
+	height 200px
+	position relative
+	display flex
+	flex-direction column
+	justify-content center
+	text-align left
+.single__ruta__entradilla
+	text-align left
+	font-weight 700
+	color #9FBD7C
+	font-style italic
 
 /*------------------------------------*\
     PAGES
@@ -459,37 +548,7 @@ input:focus
 
 
 
-.rutas__item
-	padding 20px
-.rutas__item__info
-	background-color color-secundario
-	height 170px
-	padding 20px
-	width 80%
-	margin -80px auto 0
-	z-index 1
-	position relative
-.rutas__item__title
-	align-items center
-	display flex
-	font-size 22px
-	height 85px
-	letter-spacing 4px
-	position relative
-	text-align left
-	text-transform uppercase
-	&:before,
-	&:after
-		content ''
-		height 5px
-		width 60px
-		background black
-		position absolute
-		top -10px
-	&:after
-		bottom -10px
-		top auto
-		left 0
+
 
 
 
@@ -512,16 +571,12 @@ input:focus
 // 	box-shadow 0 3px 6px rgba(0,0,0,.25)
 // 	height auto
 // 	width 100%
-.imagen-destacada
-	position relative
-	.mas-info
-		position absolute
-		top 10px
-		right -19px
+// .imagen-destacada
+// 	position relative
 
-.destacados
-	.info-destacado
-		width 100%
+// .destacados
+// 	.info-destacado
+// 		width 100%
 
 
 
@@ -530,6 +585,8 @@ input:focus
 .wpcf7-form
 	width 90%
 	margin 0 auto
+	+for_breakpoint(tablet desktop)
+		width 40%
 	input,
 	textarea
 		border 1px solid #c0c0c0
@@ -550,10 +607,6 @@ input:focus
 		border none
 		text-transform uppercase
 		width auto
-
-@media only screen and (min-width: 768px)
-	.wpcf7-form
-		width 40%
 
 
 
