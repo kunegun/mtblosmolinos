@@ -491,8 +491,9 @@ input:focus
 		margin 0
 		height auto
 		width 100%
-	// .rutas__item__title
-	// 	height 80%
+	.rutas__item__title
+		+for_breakpoint(tablet desktop)
+			height 80%
 	&.item1
 		+for_breakpoint(tablet desktop)
 			float right

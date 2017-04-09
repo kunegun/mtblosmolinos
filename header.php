@@ -60,7 +60,7 @@
 					<?php $destacada = $destacada[0]; ?>
 					<div class="page__img__destacada" style="background-image:url(<?php echo $destacada ?>);"></div>
 				<?php } ?>
-				<?php if(is_single())  { ?>
+				<?php if(is_single() || is_category() || is_author())  { ?>
 					<div class="single__bg__color" ></div>
 				<?php } ?>
 			</header>

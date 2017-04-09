@@ -259,30 +259,6 @@ ul {
   *zoom: 1;
 }
 
-::-moz-selection {
-  background: #04a4cc;
-  color: #fff;
-  text-shadow: none;
-}
-
-::selection {
-  background: #04a4cc;
-  color: #fff;
-  text-shadow: none;
-}
-
-::-webkit-selection {
-  background: #04a4cc;
-  color: #fff;
-  text-shadow: none;
-}
-
-::-moz-selection {
-  background: #04a4cc;
-  color: #fff;
-  text-shadow: none;
-}
-
 @-webkit-keyframes pop {
   0% {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -1400,6 +1376,10 @@ input:focus {
     -ms-flex-direction: row;
     flex-direction: row;
     margin: 0;
+  }
+
+  .page__rutas__item .rutas__item__title {
+    height: 80%;
   }
 
   .page__rutas__item.item1 {
