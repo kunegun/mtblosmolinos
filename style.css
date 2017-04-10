@@ -820,15 +820,16 @@ input:focus {
 
 .home__slider__item__link {
   color: #fff;
-  display: block;
   text-align: center;
 }
 
 .home__slider__item__link img {
   height: 100%;
   max-width: initial;
-  -webkit-transform: translateX(-25%);
-  transform: translateX(-25%);
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: auto;
 }
 

@@ -279,14 +279,15 @@ input:focus
 		height auto
 .home__slider__item__link
 	color white
-	display block
 	text-align center
 	+for_breakpoint(tablet desktop)
 		text-align left
 	img
 		height 100%
 		max-width initial
-		transform translateX(-25%)
+		position absolute
+		left 50%
+		transform translateX(-50%)
 		width auto
 		+for_breakpoint(desktop)
 			height auto
