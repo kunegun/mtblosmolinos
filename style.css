@@ -826,10 +826,8 @@ input:focus {
 .home__slider__item__link img {
   height: 100%;
   max-width: initial;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-25%);
+  transform: translateX(-25%);
   width: auto;
 }
 
@@ -1335,6 +1333,7 @@ input:focus {
 
   .home__slider__item__link {
     text-align: left;
+    display: block;
   }
 
   .home__slider__info {
