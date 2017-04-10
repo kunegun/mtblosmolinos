@@ -218,16 +218,21 @@ input:focus
 	li
 		display inline-block
 		margin 0 5px
+		width 30px
+		height 30px
+		cursor pointer
+		position relative
 		a
 			display block
 			font-size 30px
 			color white
+			pointer-events none
 		&.link__mail
 			a
 				font-size 34px
 				&:before
 					position absolute
-					top 9px
+					left 0
 		&.link__share__facebook
 			a
 				color color-facebook
@@ -237,6 +242,9 @@ input:focus
 		&.link__share__whatsapp
 			a
 				color color-whatsapp
+		&:hover
+			transition all .3s ease-out
+			transform translateY(-5px)
 	&.share
 		text-align left
 		li

@@ -735,12 +735,17 @@ input:focus {
 .social__links li {
   display: inline-block;
   margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
 }
 
 .social__links li a {
   display: block;
   font-size: 30px;
   color: #fff;
+  pointer-events: none;
 }
 
 .social__links li.link__mail a {
@@ -749,7 +754,7 @@ input:focus {
 
 .social__links li.link__mail a:before {
   position: absolute;
-  top: 9px;
+  left: 0;
 }
 
 .social__links li.link__share__facebook a {
@@ -762,6 +767,13 @@ input:focus {
 
 .social__links li.link__share__whatsapp a {
   color: #4dc247;
+}
+
+.social__links li:hover {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .social__links.share {
