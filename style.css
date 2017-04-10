@@ -826,8 +826,8 @@ input:focus {
 .home__slider__item__link img {
   height: 100%;
   max-width: initial;
-  -webkit-transform: translateX(-25%);
-  transform: translateX(-25%);
+  -webkit-transform: translateX(-29%);
+  transform: translateX(-29%);
   width: auto;
 }
 
