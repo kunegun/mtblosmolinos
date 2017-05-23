@@ -33,6 +33,16 @@
 				  <li class="link__share__twitter"><a class="icon-share-twitter" href="https://twitter.com/intent/tweet?text=<?php echo rawurlencode(the_title('','',false));?> - <?php the_permalink();?>" onClick="ga('send', 'event', 'social', 'shareTW', '<?php the_permalink(); ?>');" target="_blank"></a></li>
 				  <li class="link__share__whatsapp"><a class="icon-share-whatsapp" target="_blank" href="whatsapp://send?text=<?php echo rawurlencode(the_title('','',false));?> - <?php the_permalink();?>"></a></li>
 				</ul>
+
+				<?php ob_start();
+					the_gallery();
+					$html = ob_get_contents();
+					ob_end_clean();
+					if ($html != "" ){
+						echo "<h3>Galería de Imagenes</h3>";
+						echo $html;
+					}
+				?>
 			</div>
 			<div class="grid2-3">
 				<?php the_content(); // Dynamic Content ?>

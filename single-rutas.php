@@ -33,8 +33,15 @@
 						<p class="item__info__line">Track:  <span><a href="<?php the_field('enlace'); ?>" onclick="ga('send', 'event', 'interaccion', 'link track');">Track GPS</a></span></p>
 					<?php endif; ?>
 				</div>
-				<h3>Galería de Imagenes</h3>
-				<?php the_gallery(); ?>
+				<?php ob_start();
+					the_gallery();
+					$html = ob_get_contents();
+					ob_end_clean();
+					if ($html != "" ){
+						echo "<h3>Galería de Imagenes</h3>";
+						echo $html;
+					}
+				?>
 			</div> <!--./grid1-3 galeria -->
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 		<?php endwhile; ?>
