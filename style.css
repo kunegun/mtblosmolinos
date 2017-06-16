@@ -1039,6 +1039,18 @@ input:focus {
   margin: 0 auto;
 }
 
+.single__content ul {
+  padding-left: 30px;
+  list-style: none;
+}
+
+.single__content ul li:before {
+  content: ">";
+  color: #9fbd7c;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
 /*----------------------------- PAGE RUTAS --------------------------------*/
 
 .page__rutas__item {

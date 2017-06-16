@@ -44,7 +44,12 @@
 					}
 				?>
 			</div>
-			<div class="grid2-3">
+			<div class="grid2-3 single__content">
+				<?php $entradilla = get_field('entradilla');if ($entradilla) : ?>
+					<h3 class="single__ruta__entradilla">
+						<?php the_field('entradilla'); ?>
+					</h3>
+				<?php endif; ?>
 				<?php the_content(); // Dynamic Content ?>
 				<!--?php comments_template(); ?-->
 				<!--?php edit_post_link(); // Always handy to have Edit Post Links available ?-->
