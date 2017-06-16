@@ -571,4 +571,22 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+function add_facebook_open_graph_tags() {
+   if (is_single()) {
+    global $post;
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 50,50 ), false, '' );
+    if (!$image)
+        $image = 'URL A IMAGEN POR DEFECTO SI FALTA IMAGEN';
+    ?>
+    <meta property="og:title" content="<?php the_title(); ?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="<?php echo $image[0]; ?>" />
+    <meta property="og:url" content="<?php the_permalink(); ?>" />
+    <meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>" />
+        <meta property="fb:admins" content="ID DE USUARIO"/>
+    <meta property="fb:app_id" content="ID DE LA APLICACION" />
+<?php }
+}
+add_action('wp_head', 'add_facebook_open_graph_tags',99);
+
 ?>

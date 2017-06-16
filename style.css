@@ -745,7 +745,6 @@ input:focus {
   display: block;
   font-size: 30px;
   color: #fff;
-  pointer-events: none;
 }
 
 .social__links li.link__mail a {
