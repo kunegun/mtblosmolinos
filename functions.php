@@ -34,7 +34,7 @@ if (function_exists('add_theme_support'))
     add_image_size('rutaPrincipal', 751, 422, true);
     add_image_size('blogPrincipal', 1100, 404, true);
     add_image_size('iconoDestacado', 200, 200, true);
-    add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    // add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(

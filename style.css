@@ -526,6 +526,10 @@ input:focus {
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh;
+  -ms-filter: none;
+  -webkit-filter: none;
+  filter: none;
+  opacity: 1;
 }
 
 .animsition-overlay-slide {
