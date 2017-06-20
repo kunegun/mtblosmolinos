@@ -781,10 +781,19 @@ input:focus {
 
 .social__links.share {
   text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  width: 150px;
 }
 
 .social__links.share li {
   margin: 0 5px 0 0;
+}
+
+.social__links__title {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 20px;
 }
 
 /*----------------------------------- HOME SLIDER  ----------------------------*/

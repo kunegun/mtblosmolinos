@@ -32,7 +32,14 @@
 					<?php $enlace = get_field('enlace');if ($enlace) : ?>
 						<p class="item__info__line">Track:  <span><a href="<?php the_field('enlace'); ?>" onclick="ga('send', 'event', 'interaccion', 'link track');">Track GPS</a></span></p>
 					<?php endif; ?>
+					<!-- /post details -->
 				</div>
+				<h3 class="social__links__title">¡Comparte!</h3>
+				<ul class="social__links share">
+				  <li class="link__share__facebook"><a class="icon-share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" onClick="ga('send', 'event', 'social', 'shareFB', '<?php the_permalink(); ?>');" target="_blank"></a></li>
+				  <li class="link__share__twitter"><a class="icon-share-twitter" href="https://twitter.com/intent/tweet?text=<?php echo rawurlencode(the_title('','',false));?> - <?php the_permalink();?>" onClick="ga('send', 'event', 'social', 'shareTW', '<?php the_permalink(); ?>');" target="_blank"></a></li>
+				  <li class="link__share__whatsapp"><a class="icon-share-whatsapp" target="_blank" href="whatsapp://send?text=<?php echo rawurlencode(the_title('','',false));?> - <?php the_permalink();?>"></a></li>
+				</ul>
 				<?php ob_start();
 					the_gallery();
 					$html = ob_get_contents();
