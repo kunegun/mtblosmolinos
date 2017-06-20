@@ -58,7 +58,8 @@
 				<?php $args = array(
 					'posts_per_page' => 3,
 					'post_type' => 'rutas',
-					'orderby' => 'rand'
+					'order_by' => 'date',
+					'order' => 'DESC'
 				); ?>
 
 				<?php $tours = new WP_Query($args); ?>
